@@ -35,14 +35,12 @@ export interface ProjectProps {
   name: string;
   category: string;
   summary: string;
-  image: string;
   linkPreview?: string;
   linkSource?: string;
 }
 
 export interface AboutProps {
   description: string;
-  image: string;
 }
 
 export interface HeaderProps {
