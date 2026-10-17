@@ -11,7 +11,7 @@ const { projects } = Astro.props;
   <div class="grid gap-5 md:grid-cols-2">
     {projects.map(({ name, category, summary }, index) => (
       <article class="group min-h-64 border-t border-[#A16C5D] px-1 pt-6 transition-colors duration-300 hover:bg-[#EFEBE4] md:p-7 md:pt-6">
-        <div class="mb-14 flex items-center justify-between"><span class="text-xs font-medium tracking-[0.18em] text-[#A34838] uppercase">0{index + 1}</span><span class="h-px w-12 bg-[#DDD7CE] transition-all duration-300 group-hover:w-20 group-hover:bg-[#A16C5D]"></span></div>
+        <div class="mb-14"><span class="text-xs font-medium tracking-[0.18em] text-[#A34838]">0{index + 1}</span></div>
         <p class="mb-3 text-xs font-medium tracking-[0.14em] text-[#696861] uppercase">{category}</p>
         <h3 class="mb-4 font-serif text-4xl leading-none font-medium tracking-[-0.03em] text-[#24231F]">{name}</h3>
         <p class="max-w-md text-base leading-7 text-[#696861]">{summary}</p>
