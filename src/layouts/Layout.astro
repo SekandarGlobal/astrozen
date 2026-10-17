@@ -4,35 +4,55 @@ import { Font } from "astro:assets";
 import { SITE_CONFIG } from "@config";
 import Footer from "@components/Footer.astro";
 
-const { title, description, lang, author, socialImage, canonicalURL = new URL(Astro.url.pathname, Astro.site).href } = SITE_CONFIG;
-const ogImgUrl = canonicalURL + socialImage;
+const canonicalURL = SITE_CONFIG.canonicalURL ?? new URL(Astro.url.pathname, Astro.site).href;
+const socialImage = SITE_CONFIG.socialImage;
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE_CONFIG.author,
+  jobTitle: "Founder & CEO of Gromond; Web Developer & AI Product Builder",
+  email: "sekandar.dev@gmail.com",
+  image: socialImage,
+  url: canonicalURL,
+};
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE_CONFIG.author,
+  url: canonicalURL,
+  description: SITE_CONFIG.description,
+};
 ---
 
 <!doctype html>
-<html lang={lang} class="scroll-pt-24 scroll-smooth">
+<html lang={SITE_CONFIG.lang} class="scroll-pt-24 scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-    <meta name="author" content={author} />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={SITE_CONFIG.description} />
+    <meta name="author" content={SITE_CONFIG.author} />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <title>{SITE_CONFIG.title}</title>
     <Font cssVariable="--font-gabarito" preload />
     <Font cssVariable="--font-be-vietnam-pro" preload />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_CONFIG.author} />
+    <meta property="og:title" content={SITE_CONFIG.title} />
+    <meta property="og:description" content="Explore the work and professional profile of Sekandar Samadi, Founder & CEO of Gromond, focused on digital products and software development." />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:image" content={ogImgUrl} />
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={ogImgUrl} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={SITE_CONFIG.title} />
+    <meta name="twitter:description" content="Explore the work and professional profile of Sekandar Samadi, Founder & CEO of Gromond, focused on digital products and software development." />
+    <meta name="twitter:image" content={socialImage} />
+    <script type="application/ld+json" set:html={JSON.stringify([personSchema, websiteSchema])}></script>
   </head>
   <body class="font-sans text-[#24231F]">
     <Header siteLogo={SITE_CONFIG.siteLogo} navLinks={SITE_CONFIG.navLinks} />
     <main class="mx-auto max-w-5xl px-6 md:px-10"><slot /></main>
-    <Footer author={author} socialLinks={SITE_CONFIG.socialLinks} />
+    <Footer author={SITE_CONFIG.author} socialLinks={SITE_CONFIG.socialLinks} />
   </body>
 </html>
