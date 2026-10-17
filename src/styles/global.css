@@ -3,12 +3,10 @@
 @theme inline {
   --font-sans: var(--font-be-vietnam-pro);
   --font-serif: var(--font-gabarito);
-
-  --color-primary: #6c8cff;
-  --color-neutral: #a3acba;
-  --color-white: #f5f7fa;
-  --color-black: #0b0d12;
-
+  --color-primary: #4355db;
+  --color-neutral: #626875;
+  --color-white: #17191d;
+  --color-black: #ffffff;
   --text-xs: 0.875rem;
   --text-xs--line-height: 1.125rem;
   --text-sm: 1rem;
@@ -35,19 +33,12 @@
   --text-8xl--line-height: 4.875rem;
   --text-9xl: 6rem;
   --text-9xl--line-height: 6.625rem;
-
   --tracking-tightest: -2px;
   --tracking-tighter: -1px;
   --tracking-tight: -0.25px;
-
   --animate-slide-in: slide-in 600ms ease both;
-
-  @keyframes slide-in {
-    10% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
+  @keyframes slide-in { 10% { transform: translateY(-100%); } 100% { transform: translateY(0); } }
 }
+
+html { background: #ffffff; }
+body { background: #ffffff; }

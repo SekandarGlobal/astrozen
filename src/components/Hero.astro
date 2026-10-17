@@ -1,33 +1,11 @@
 ---
-import type { HeroProps } from "@types";
-type Props = HeroProps;
-
 const { name, specialty, summary, email } = Astro.props;
 ---
 
-<section class="py-24 md:py-32" id="#hero">
-  <h1
-    class="mb-1.5 font-serif text-7xl font-bold tracking-tightest text-white sm:text-8xl md:mb-0 md:text-9xl"
-  >
-    {name}
-  </h1>
-  <p
-    class="mb-9 font-serif text-4xl leading-11.5 font-bold tracking-tighter text-primary sm:text-5xl md:text-6xl"
-  >
-    {specialty}
-  </p>
-  <p class="mb-16 text-base font-normal text-neutral md:text-lg">
-    {summary}
-  </p>
-
-  <div class="flex flex-wrap gap-4">
-    <a
-      class="inline-block rounded-full bg-primary px-8 py-5 text-sm leading-5 font-medium text-[#fff]"
-      href={email ? `mailto:${email}` : "#contact"}>Get in Touch</a
-    >
-    <a
-      class="inline-block rounded-full border border-neutral/30 px-8 py-5 text-sm leading-5 font-medium text-white transition-colors hover:border-primary hover:text-primary"
-      href="#projects">Explore My Work</a
-    >
-  </div>
+<section class="py-24 md:py-32" id="hero">
+  <p class="mb-5 text-sm font-medium tracking-[0.16em] text-[#626875] uppercase">Founder-led software and product development</p>
+  <h1 class="mb-3 font-serif text-6xl font-bold tracking-tightest text-[#17191D] sm:text-7xl md:text-8xl">{name}</h1>
+  <p class="mb-9 max-w-2xl font-serif text-3xl leading-tight font-bold tracking-tighter text-[#4355DB] sm:text-4xl md:text-5xl">{specialty}</p>
+  <p class="mb-12 max-w-2xl text-base leading-8 font-normal text-[#626875] md:text-lg">{summary}</p>
+  <a class="inline-block rounded-full bg-[#4355DB] px-8 py-5 text-sm leading-5 font-medium text-white transition-colors hover:bg-[#3445c3]" href={email ? `mailto:${email}` : "mailto:sekandar.dev@gmail.com"}>Get in Touch</a>
 </section>

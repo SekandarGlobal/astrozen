@@ -1,14 +1,9 @@
 ---
 import Section from "./Section.astro";
-import type { AboutProps, HeroProps } from "@types";
-
-type Props = AboutProps & Pick<HeroProps, "name">;
-const { description } = Astro.props;
+import type { AboutProps } from "@types";
+const { description } = Astro.props as AboutProps;
 ---
 
 <Section text="About Me" href="about">
-  <div class="max-w-3xl">
-    <div class="mb-8 h-px w-16 bg-[#6C8CFF]"></div>
-    <p class="whitespace-pre-line text-base leading-8 text-[#A3ACBA] md:text-lg">{description}</p>
-  </div>
+  <div class="max-w-3xl"><div class="mb-8 h-px w-16 bg-[#4355DB]"></div><p class="whitespace-pre-line text-base leading-8 text-[#626875] md:text-lg">{description}</p></div>
 </Section>

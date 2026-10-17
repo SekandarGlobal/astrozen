@@ -4,35 +4,17 @@ import type { HeaderProps } from "@types";
 
 type Props = HeaderProps;
 const { navLinks } = Astro.props;
-const profilePhoto = "https://ik.imagekit.io/g7cevwqvt/file_00000000bd4c8208b65347acec7d180b.png";
+const profilePhoto = "/sekandar-profile.png";
 ---
 
-<header class="sticky top-0 z-50 mx-auto flex max-w-5xl animate-slide-in items-center justify-between bg-[#0B0D12]/95 px-5 py-5 backdrop-blur">
+<header class="sticky top-0 z-50 mx-auto flex max-w-5xl animate-slide-in items-center justify-between border-b border-[#E7E9EE]/80 bg-white/95 px-5 py-5 backdrop-blur">
   <a href="/" aria-label="Sekandar Samadi home" class="group">
-    <img
-      class="h-12 w-12 rounded-full border border-[#6C8CFF]/50 object-cover object-center shadow-[0_0_0_4px_rgba(108,140,255,0.08)] transition-transform duration-300 group-hover:scale-105"
-      src={profilePhoto}
-      width="48"
-      height="48"
-      alt="Sekandar Samadi — Profile Photo"
-      loading="eager"
-      fetchpriority="high"
-    />
+    <img class="h-12 w-12 rounded-full border border-[#4355DB]/30 object-cover object-center shadow-[0_0_0_4px_rgba(67,85,219,0.08)] transition-transform duration-300 group-hover:scale-105" src={profilePhoto} width="48" height="48" alt="Sekandar Samadi — Profile Photo" loading="eager" fetchpriority="high" />
   </a>
-
-  <button type="button" id="menu-button" class="px-1.5 text-[#A3ACBA] sm:hidden" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle navigation">
-    <Menu />
-  </button>
-
-  <nav class="absolute top-20 right-5 hidden rounded-xl border border-[#252B38] bg-[#121620] px-4 py-5 text-[#A3ACBA] sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0" id="main-menu">
+  <button type="button" id="menu-button" class="px-1.5 text-[#626875] sm:hidden" aria-expanded="false" aria-controls="main-menu" aria-label="Toggle navigation"><Menu /></button>
+  <nav class="absolute top-20 right-5 hidden rounded-xl border border-[#E7E9EE] bg-white px-4 py-5 text-[#626875] shadow-lg sm:static sm:block sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none" id="main-menu">
     <ul class="gap-2 sm:flex">
-      {navLinks.map((link) => (
-        <li class="relative">
-          <a class="nav-item relative block p-2 text-sm font-medium transition-colors duration-300 hover:text-[#F5F7FA]" href={link.href}>
-            {link.text}
-          </a>
-        </li>
-      ))}
+      {navLinks.map((link) => <li><a class="nav-item relative block p-2 text-sm font-medium transition-colors duration-300 hover:text-[#4355DB]" href={link.href}>{link.text}</a></li>)}
     </ul>
   </nav>
 </header>
@@ -41,16 +23,9 @@ const profilePhoto = "https://ik.imagekit.io/g7cevwqvt/file_00000000bd4c8208b653
   const button = document.querySelector("#menu-button");
   const menu = document.querySelector("#main-menu");
   const navItems = document.querySelectorAll("#main-menu > ul > li > a");
-  const toggleMenu = () => {
-    menu?.classList.toggle("hidden");
-    button?.setAttribute("aria-expanded", `${!menu?.classList.contains("hidden")}`);
-  };
+  const toggleMenu = () => { menu?.classList.toggle("hidden"); button?.setAttribute("aria-expanded", `${!menu?.classList.contains("hidden")}`); };
   button?.addEventListener("click", toggleMenu);
-  navItems.forEach((item) => item.addEventListener("click", () => {
-    if (window.innerWidth < 640 && !item.getAttribute("href")?.startsWith("mailto:")) toggleMenu();
-  }));
+  navItems.forEach((item) => item.addEventListener("click", () => { if (window.innerWidth < 640 && !item.getAttribute("href")?.startsWith("mailto:")) toggleMenu(); }));
 </script>
 
-<style>
-  header { animation-timeline: scroll(); animation-range: 0 650px; }
-</style>
+<style>header { animation-timeline: scroll(); animation-range: 0 650px; }</style>

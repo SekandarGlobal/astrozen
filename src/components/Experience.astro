@@ -1,43 +1,16 @@
 ---
 import Section from "./Section.astro";
 import type { ExperienceProps } from "@types";
-
-interface Props {
-  experience: ExperienceProps[];
-}
-
+interface Props { experience: ExperienceProps[]; }
 const { experience } = Astro.props;
 ---
 
-<Section text="Work Experience" href="experience">
-  {
-    experience.map(({ company, position, startDate, endDate, summary }) => (
-      <div class="mb-10">
-        <h3 class="mb-1.5 font-serif text-2xl font-semibold text-white">
-          {company}
-        </h3>
-        <div class="flex flex-col items-start pb-5">
-          <h4 class="mb-0.5 font-serif text-2xl font-medium text-primary">
-            {position}
-          </h4>
-          {endDate && (
-            <span class="pb-0.5 text-sm text-white/70">
-              {startDate ? `${startDate} — ${endDate}` : endDate}
-            </span>
-          )}
-        </div>
-        {Array.isArray(summary) ? (
-          <ul class="list-none">
-            {summary.map((log) => (
-              <li class="relative mb-3 pl-8 text-base text-neutral before:absolute before:top-1 before:left-0 before:content-[url(/check.svg)]">
-                {log}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p class="text-base text-neutral">{summary}</p>
-        )}
-      </div>
-    ))
-  }
+<Section text="Experience" href="experience">
+  {experience.map(({ company, position, startDate, endDate, summary }) => (
+    <div class="mb-10 border-l-2 border-[#4355DB]/25 pl-6">
+      <h3 class="mb-1.5 font-serif text-2xl font-semibold text-[#17191D]">{company}</h3>
+      <div class="flex flex-col items-start pb-5"><h4 class="font-serif text-2xl font-medium text-[#4355DB]">{position}</h4>{endDate && <span class="text-sm text-[#858B96]">{startDate ? `${startDate} — ${endDate}` : endDate}</span>}</div>
+      {Array.isArray(summary) ? <ul class="list-none">{summary.map((log) => <li class="relative mb-3 pl-6 text-base leading-7 text-[#626875] before:absolute before:top-0 before:left-0 before:text-[#4355DB] before:content-['—']">{log}</li>)}</ul> : <p class="text-base text-[#626875]">{summary}</p>}
+    </div>
+  ))}
 </Section>
