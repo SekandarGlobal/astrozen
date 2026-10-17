@@ -1,64 +1,29 @@
 ---
 import Section from "./Section.astro";
-import { Image } from "astro:assets";
 import type { ProjectProps } from "@types";
 
-interface Props {
-  projects: ProjectProps[];
-}
-
+interface Props { projects: ProjectProps[]; }
 const { projects } = Astro.props;
 ---
 
 <Section text="Featured Projects" href="projects">
-  {
-    projects.map(({ name, category, summary, image, linkPreview, linkSource }, index) => {
-      const top = 98 + index * 40;
-      return (
-        <div
-          style={`top: ${top}px;`}
-          class="sticky mb-12 rounded-2xl border border-neutral/20 bg-black"
-        >
-          <div class="bg-difu relative z-1 grid h-145 w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
-            <div class="px-6 pt-12">
-              <p class="mb-2 text-xs font-medium tracking-[0.18em] text-neutral/70 uppercase">
-                {category}
-              </p>
-              <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
-                {name}
-              </h3>
-              <p class="text-base text-neutral">{summary}</p>
-              <div class="flex gap-5 pt-10 text-white">
-                <a
-                  href={linkSource}
-                  target="_blank"
-                  rel="noreferrer"
-                  class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
-                >
-                  {name === "Gromond Store" ? "View Project" : "Explore Project"}
-                </a>
-                <a
-                  href={linkPreview}
-                  target="_blank"
-                  rel="noreferrer"
-                  class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
-                >
-                  {name === "Gromond Store" ? "Visit Store" : "Visit Website"}
-                </a>
-              </div>
-            </div>
-            <div class="flex items-end justify-end overflow-hidden">
-              <Image
-                class="h-full w-[95%] rounded-ss-xl rounded-ee-2xl object-none object-top-left sm:h-[85%] sm:w-full"
-                src={image}
-                alt={name}
-                width="736"
-                height="483"
-              />
-            </div>
+  <div class="grid gap-5 md:grid-cols-2">
+    {projects.map(({ name, category, summary, linkPreview, linkSource }, index) => (
+      <article class="group flex min-h-80 flex-col justify-between rounded-2xl border border-[#252B38] bg-[#121620] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#6C8CFF]/60 hover:shadow-[0_16px_40px_rgba(0,0,0,0.22)] md:p-7">
+        <div>
+          <div class="mb-10 flex items-center justify-between">
+            <span class="text-xs font-medium tracking-[0.18em] text-[#A3ACBA] uppercase">0{index + 1}</span>
+            <span class="h-2 w-2 rounded-full bg-[#6C8CFF] opacity-70 transition-opacity group-hover:opacity-100"></span>
           </div>
+          <p class="mb-2 text-xs font-medium tracking-[0.12em] text-[#A3ACBA] uppercase">{category}</p>
+          <h3 class="mb-4 font-serif text-3xl font-medium text-[#F5F7FA]">{name}</h3>
+          <p class="text-base leading-7 text-[#A3ACBA]">{summary}</p>
         </div>
-      );
-    })
-  }
+        <div class="flex flex-wrap gap-5 pt-8 text-sm font-medium text-[#F5F7FA]">
+          <a href={linkPreview} target="_blank" rel="noreferrer" class="transition-colors hover:text-[#6C8CFF]">{name === "Gromond Store" ? "Visit Store" : "Visit Website"} ↗</a>
+          <a href={linkSource} target="_blank" rel="noreferrer" class="transition-colors hover:text-[#6C8CFF]">{name === "Gromond Store" ? "View Project" : "Explore Project"} ↗</a>
+        </div>
+      </article>
+    ))}
+  </div>
 </Section>
