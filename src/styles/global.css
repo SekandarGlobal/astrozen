@@ -3,42 +3,26 @@
 @theme inline {
   --font-sans: var(--font-be-vietnam-pro);
   --font-serif: var(--font-gabarito);
-  --color-primary: #4355db;
-  --color-neutral: #626875;
-  --color-white: #17191d;
-  --color-black: #ffffff;
-  --text-xs: 0.875rem;
-  --text-xs--line-height: 1.125rem;
-  --text-sm: 1rem;
-  --text-sm--line-height: 1.25rem;
-  --text-base: 1.125rem;
-  --text-base--line-height: 1.625rem;
-  --text-lg: 1.25rem;
-  --text-lg--line-height: 1.75rem;
-  --text-xl: 1.5rem;
-  --text-xl--line-height: 1.813rem;
-  --text-2xl: 1.75rem;
-  --text-2xl--line-height: 2.125rem;
-  --text-3xl: 2rem;
-  --text-3xl--line-height: 2.375rem;
-  --text-4xl: 2.25rem;
-  --text-4xl--line-height: 2.688rem;
-  --text-5xl: 2.5rem;
-  --text-5xl--line-height: 3rem;
-  --text-6xl: 3rem;
-  --text-6xl--line-height: 3.625rem;
-  --text-7xl: 3.75rem;
-  --text-7xl--line-height: 1;
-  --text-8xl: 4.5rem;
-  --text-8xl--line-height: 4.875rem;
-  --text-9xl: 6rem;
-  --text-9xl--line-height: 6.625rem;
-  --tracking-tightest: -2px;
-  --tracking-tighter: -1px;
-  --tracking-tight: -0.25px;
+  --color-primary: #a34838;
+  --color-neutral: #696861;
+  --color-white: #24231f;
+  --color-black: #f5f3ee;
   --animate-slide-in: slide-in 600ms ease both;
   @keyframes slide-in { 10% { transform: translateY(-100%); } 100% { transform: translateY(0); } }
 }
 
-html { background: #ffffff; }
-body { background: #ffffff; }
+:root {
+  --color-background: #f5f3ee;
+  --color-surface: #f5f3ee;
+  --color-surface-secondary: #efebe4;
+  --color-text-primary: #24231f;
+  --color-text-secondary: #696861;
+  --color-text-muted: #858078;
+  --color-accent: #a34838;
+  --color-border: #a16c5d;
+  --color-border-soft: #ddd7ce;
+}
+
+html { background: var(--color-background); }
+body { background: var(--color-background); color: var(--color-text-primary); }
+::selection { background: #d9b3a9; color: var(--color-text-primary); }
