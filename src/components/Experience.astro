@@ -7,10 +7,10 @@ const { experience } = Astro.props;
 
 <Section text="Experience" href="experience">
   {experience.map(({ company, position, startDate, endDate, summary }) => (
-    <div class="mb-10 border-l-2 border-[#4355DB]/25 pl-6">
-      <h3 class="mb-1.5 font-serif text-2xl font-semibold text-[#17191D]">{company}</h3>
-      <div class="flex flex-col items-start pb-5"><h4 class="font-serif text-2xl font-medium text-[#4355DB]">{position}</h4>{endDate && <span class="text-sm text-[#858B96]">{startDate ? `${startDate} — ${endDate}` : endDate}</span>}</div>
-      {Array.isArray(summary) ? <ul class="list-none">{summary.map((log) => <li class="relative mb-3 pl-6 text-base leading-7 text-[#626875] before:absolute before:top-0 before:left-0 before:text-[#4355DB] before:content-['—']">{log}</li>)}</ul> : <p class="text-base text-[#626875]">{summary}</p>}
+    <div class="max-w-3xl border-l border-[#A16C5D] pl-6 md:pl-8">
+      <h3 class="mb-2 font-serif text-4xl font-medium tracking-[-0.03em] text-[#24231F]">{company}</h3>
+      <div class="mb-7 flex flex-col items-start"><h4 class="font-serif text-2xl font-medium text-[#A34838]">{position}</h4>{endDate && <span class="mt-2 text-xs font-medium tracking-[0.12em] text-[#696861] uppercase">{startDate ? `${startDate} — ${endDate}` : endDate}</span>}</div>
+      {Array.isArray(summary) ? <ul class="list-none">{summary.map((log) => <li class="relative mb-4 pl-6 text-base leading-8 text-[#696861] before:absolute before:top-0 before:left-0 before:text-[#A34838] before:content-['—']">{log}</li>)}</ul> : <p class="text-base leading-8 text-[#696861]">{summary}</p>}
     </div>
   ))}
 </Section>

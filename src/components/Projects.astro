@@ -7,14 +7,14 @@ const { projects } = Astro.props;
 ---
 
 <Section text="Selected Work" href="projects">
-  <p class="mb-10 max-w-2xl text-base leading-7 text-[#626875] md:text-lg">A selection of digital products and development work that reflects my interests in technology, software, and product development.</p>
+  <p class="mb-12 max-w-2xl text-base leading-8 text-[#696861] md:text-lg">A selection of digital products and development work that reflects my interests in technology, software, and product development.</p>
   <div class="grid gap-5 md:grid-cols-2">
     {projects.map(({ name, category, summary }, index) => (
-      <article class="group flex min-h-72 flex-col rounded-2xl border border-[#E7E9EE] bg-[#F7F8FA] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#4355DB]/40 hover:shadow-[0_16px_40px_rgba(23,25,29,0.08)] md:p-7">
-        <div class="mb-10 flex items-center justify-between"><span class="text-xs font-medium tracking-[0.18em] text-[#858B96] uppercase">0{index + 1}</span><span class="h-2 w-2 rounded-full bg-[#4355DB] opacity-70 transition-opacity group-hover:opacity-100"></span></div>
-        <p class="mb-2 text-xs font-medium tracking-[0.12em] text-[#626875] uppercase">{category}</p>
-        <h3 class="mb-4 font-serif text-3xl font-medium text-[#17191D]">{name}</h3>
-        <p class="text-base leading-7 text-[#626875]">{summary}</p>
+      <article class="group min-h-64 border-t border-[#A16C5D] px-1 pt-6 transition-colors duration-300 hover:bg-[#EFEBE4] md:p-7 md:pt-6">
+        <div class="mb-14 flex items-center justify-between"><span class="text-xs font-medium tracking-[0.18em] text-[#A34838] uppercase">0{index + 1}</span><span class="h-px w-12 bg-[#DDD7CE] transition-all duration-300 group-hover:w-20 group-hover:bg-[#A16C5D]"></span></div>
+        <p class="mb-3 text-xs font-medium tracking-[0.14em] text-[#696861] uppercase">{category}</p>
+        <h3 class="mb-4 font-serif text-4xl leading-none font-medium tracking-[-0.03em] text-[#24231F]">{name}</h3>
+        <p class="max-w-md text-base leading-7 text-[#696861]">{summary}</p>
       </article>
     ))}
   </div>
