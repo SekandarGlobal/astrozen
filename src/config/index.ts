@@ -1,98 +1,92 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Alejandro Múnez — Mobile & Web Developer",
-  author: "Alejandro Múnez Cuntez",
+  title: "Sekandar Samadi — Founder, Developer & Product Builder",
+  author: "Sekandar Samadi",
   description:
-    "Software Engineer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
+    "Explore the work of Sekandar Samadi, Founder & CEO of Gromond, building digital products, web applications, and AI-powered experiences.",
   lang: "en",
-  siteLogo: "/alejandro-small.jpg",
+  siteLogo: "/favicon.svg",
   navLinks: [
     { text: "Experience", href: "#experience" },
     { text: "Projects", href: "#projects" },
     { text: "About", href: "#about" },
+    { text: "Contact", href: "#contact" },
   ],
-  socialLinks: [
-    { text: "Twitter", href: "https://github.com/immois/astro-zen" },
-    { text: "LinkedIn", href: "https://github.com/immois/astro-zen" },
-    { text: "Github", href: "https://github.com/immois/astro-zen" },
-    { text: "Youtube", href: "https://github.com/immois/astro-zen" },
-    { text: "Dribbble", href: "https://github.com/immois/astro-zen" },
-  ],
+  socialLinks: [],
   socialImage: "/zen-og.png",
   canonicalURL: "https://astro-zen.vercel.app",
 };
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Alejandro Múnez",
-    specialty: "Mobile & Web Developer",
+    name: "Sekandar Samadi",
+    specialty: "Founder & CEO of Gromond · Web Developer & AI Product Builder",
     summary:
-      "Developer based in San Francisco, USA. I specialize in UI design, web and mobile application development and maintenance.",
-    email: "example@email.com",
+      "I'm Sekandar Samadi, a founder and developer focused on building modern digital products, web applications, and AI-powered experiences. Through Gromond and my independent projects, I work at the intersection of technology, product design, and practical innovation. I enjoy turning ideas into functional products, developing intuitive user experiences, and building software that solves real problems.",
+    email: "",
   },
   experience: [
     {
-      company: "Zalmart",
-      position: "Lead Android Developer",
-      startDate: "May 2018",
-      endDate: "Sept 2020",
+      company: "Gromond",
+      position: "Founder & CEO",
+      startDate: "",
+      endDate: "Present",
       summary: [
-        "Implemented advanced memory management and code optimization techniques, resulting in a reduction in application load time by 40% and a decrease in crashes by 25%. This significantly improved user experience and increased user retention by 20%.",
-        "I led a team of developers in building and integrating new features using Jetpack Android components such as LiveData and ViewModel. This enabled us to build scalable and maintainable applications, reducing the crash rate by 20% and speeding up the time to delivery of new features by 15%.",
-        "Integrated Google Pay for in-app purchases, resulting in a 35% increase in mobile transaction revenue. Additionally, implemented Firebase Analytics to gain insights into user behavior, enabling data-driven optimizations and a 30% increase in user retention.",
+        "Leading the development and growth of Gromond, a technology-focused venture centered on building digital products and modern software experiences.",
+        "Working across product strategy, development, technology decisions, user experience, and the process of turning ideas into usable products.",
+        "Focus areas: Product development, technology strategy, web applications, product design and user experience, business and product growth.",
       ],
     },
     {
-      company: "Bankit",
-      position: "Mobile Developer",
-      startDate: "Feb 2017",
-      endDate: "May 2018",
+      company: "Independent Projects",
+      position: "Independent Developer & Product Builder",
+      startDate: "",
+      endDate: "Present",
       summary: [
-        "I designed and developed a mobile application using Flutter, allowing it to be deployed on both Android and iOS with a single codebase. This reduced development time by 50% and maintenance costs by 30%, facilitating a consistent user experience on both platforms.",
-        "I integrated biometric authentication and data encryption, significantly improving the security of user data. This implementation resulted in a 40% increase in user trust and a 25% reduction in unauthorized access attempts.",
+        "Developing and experimenting with digital products across web development, AI, and software engineering.",
+        "Building functional applications, exploring modern development tools, improving product experiences, and turning concepts into working software.",
+        "Focus areas: Full-stack web development, AI-powered applications, software prototyping, UI/UX implementation, technical problem-solving.",
       ],
-    },
-    {
-      company: "Driveer",
-      position: "Frontend Developer",
-      startDate: "Jun 2015",
-      endDate: "Oct 2016",
-      summary:
-        "Developed and integrated a real-time vehicle tracking system using WebSockets, improving accuracy and data update in the application. This functionality increased user satisfaction by 30% and reduced customer service inquiries by 25%.",
     },
   ],
   projects: [
     {
-      name: "Spotifu Music",
-      summary: "A music streaming app that emulates Spotify's core features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/spotifu.png",
+      name: "Gromond",
+      category: "Technology & Digital Products",
+      summary:
+        "Gromond is my technology venture, where I focus on building digital products and exploring new opportunities across software, web applications, and technology. The goal is to turn ideas into useful, thoughtfully designed digital experiences.",
+      linkPreview: "https://gromond.vercel.app/en/gromond-store",
+      linkSource: "https://gromond.vercel.app/en/gromond-store",
+      image: "/raja.png",
     },
     {
-      name: "Shopp App",
-      summary: "An e-commerce platform that replicates Shopify's key features.",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/shopify-clon.png",
+      name: "Shenzino",
+      category: "AI & Technology",
+      summary:
+        "Shenzino is an AI-focused web product that reflects my interest in artificial intelligence and the development of modern digital experiences. Explore the product to learn more about its capabilities and direction.",
+      linkPreview: "https://www.shenzino.com/",
+      linkSource: "https://www.shenzino.com/",
+      image: "/raja.png",
     },
     {
-      name: "ClonTagram",
-      summary: "A social network that replicates the features of Instagram",
-      linkPreview: "/",
-      linkSource: "https://github.com/immois/astro-zen",
-      image: "/clone-ig.png",
+      name: "Gromond Store",
+      category: "E-Commerce & Web Development",
+      summary:
+        "An online store experience within the Gromond ecosystem, focused on presenting products through a modern web experience.",
+      linkPreview: "https://gromond.vercel.app/en/gromond-store",
+      linkSource: "https://gromond.vercel.app/en/gromond-store",
+      image: "/raja.png",
     },
   ],
   about: {
-    description: `
-      Hi, I’m Alejandro Múnez, a passionate Mobile and Web Developer with a knack for crafting seamless digital experiences. With a strong background in both Android and iOS development, as well as front-end web technologies, I thrive in the intersection where creativity meets technology.
-
-      Over the years, I’ve honed my skills in building robust, user-friendly applications that not only meet the needs of users but also push the boundaries of what’s possible. My projects range from innovative mobile applications to responsive web designs, all with a focus on performance, security, and scalability.
-    `,
-    image: "/alejandro-big.jpg",
+    description: `Hi, I'm Sekandar Samadi, Founder & CEO of Gromond and a technology enthusiast passionate about software development, product innovation, and artificial intelligence.\n\nMy work focuses on turning ideas into practical digital experiences, from web applications and online platforms to AI-powered products. I enjoy exploring new technologies, solving technical challenges, and creating products that combine functionality, performance, and thoughtful design.\n\nI'm particularly interested in the future of AI, modern web technologies, mobile applications, and building products that can scale into meaningful businesses. For me, development is more than writing code. It's about understanding problems, designing solutions, and bringing useful ideas to life.`,
+    image: "/raja.png",
   },
+  skills: [
+    { title: "Web Development", items: ["Modern web application development", "Frontend development", "Responsive user interfaces", "Web product implementation"] },
+    { title: "Artificial Intelligence", items: ["AI-powered product development", "AI application concepts", "Integration of AI into digital experiences"] },
+    { title: "Product Development", items: ["Turning ideas into working prototypes", "Product planning and implementation", "User experience considerations", "Iterative product improvement"] },
+    { title: "Technology & Engineering", items: ["Software architecture fundamentals", "Technical problem-solving", "Development tooling", "Learning and applying emerging technologies"] },
+  ],
 };
-
-// #5755ff

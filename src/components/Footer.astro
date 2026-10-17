@@ -4,7 +4,6 @@ import type { SiteConfig } from "@types";
 type Props = Pick<SiteConfig, "author" | "socialLinks">;
 
 const { author, socialLinks } = Astro.props;
-const currentYear = new Date().getFullYear();
 ---
 
 <footer
@@ -26,8 +25,7 @@ const currentYear = new Date().getFullYear();
     }
   </ul>
   <p class="text-xs">
-    {author} © {currentYear}.{" "}
-    <span class="text-neutral">Designed & Developed by</span>{" "}
-    Moisés Machuca
+    {author} © 2026.{" "}
+    <span class="text-neutral">Designed & Built with Purpose.</span>
   </p>
 </footer>

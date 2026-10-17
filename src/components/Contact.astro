@@ -1,0 +1,19 @@
+---
+import Section from "./Section.astro";
+
+const { hasEmail = false } = Astro.props;
+---
+
+<Section text="Get in Touch" href="contact">
+  <h2 class="mb-5 font-serif text-4xl font-semibold tracking-tight text-white md:text-5xl">
+    Have an Idea Worth Building?
+  </h2>
+  <p class="mb-8 max-w-2xl text-base text-neutral md:text-lg">
+    I'm always interested in technology, product development, innovative ideas, and opportunities to build something meaningful. If you'd like to discuss a project, explore a collaboration, or simply connect, feel free to reach out.
+  </p>
+  {hasEmail ? (
+    <a class="inline-block rounded-full bg-primary px-8 py-5 text-sm font-medium text-white" href="mailto:">Contact Me</a>
+  ) : (
+    <p class="text-sm text-neutral/70">Contact details will be added here soon.</p>
+  )}
+</Section>

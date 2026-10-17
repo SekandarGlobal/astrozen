@@ -1,0 +1,26 @@
+---
+import Section from "./Section.astro";
+
+interface SkillGroup {
+  title: string;
+  items: string[];
+}
+
+const { skills } = Astro.props as { skills: SkillGroup[] };
+---
+
+<Section text="Skills & Expertise" href="skills">
+  <p class="mb-10 text-base text-neutral md:text-lg">
+    My interests and working areas span software development, product building, and emerging technologies.
+  </p>
+  <div class="grid gap-8 sm:grid-cols-2">
+    {skills.map((skill) => (
+      <div>
+        <h3 class="mb-4 font-serif text-2xl font-medium text-primary">{skill.title}</h3>
+        <ul class="space-y-3 text-base text-neutral">
+          {skill.items.map((item) => <li class="before:mr-3 before:text-primary before:content-['•']">{item}</li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+</Section>
