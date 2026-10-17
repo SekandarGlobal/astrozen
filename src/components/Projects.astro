@@ -6,23 +6,15 @@ interface Props { projects: ProjectProps[]; }
 const { projects } = Astro.props;
 ---
 
-<Section text="Featured Projects" href="projects">
+<Section text="Selected Work" href="projects">
+  <p class="mb-10 max-w-2xl text-base leading-7 text-[#626875] md:text-lg">A selection of digital products and development work that reflects my interests in technology, software, and product development.</p>
   <div class="grid gap-5 md:grid-cols-2">
-    {projects.map(({ name, category, summary, linkPreview, linkSource }, index) => (
-      <article class="group flex min-h-80 flex-col justify-between rounded-2xl border border-[#252B38] bg-[#121620] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#6C8CFF]/60 hover:shadow-[0_16px_40px_rgba(0,0,0,0.22)] md:p-7">
-        <div>
-          <div class="mb-10 flex items-center justify-between">
-            <span class="text-xs font-medium tracking-[0.18em] text-[#A3ACBA] uppercase">0{index + 1}</span>
-            <span class="h-2 w-2 rounded-full bg-[#6C8CFF] opacity-70 transition-opacity group-hover:opacity-100"></span>
-          </div>
-          <p class="mb-2 text-xs font-medium tracking-[0.12em] text-[#A3ACBA] uppercase">{category}</p>
-          <h3 class="mb-4 font-serif text-3xl font-medium text-[#F5F7FA]">{name}</h3>
-          <p class="text-base leading-7 text-[#A3ACBA]">{summary}</p>
-        </div>
-        <div class="flex flex-wrap gap-5 pt-8 text-sm font-medium text-[#F5F7FA]">
-          <a href={linkPreview} target="_blank" rel="noreferrer" class="transition-colors hover:text-[#6C8CFF]">{name === "Gromond Store" ? "Visit Store" : "Visit Website"} ↗</a>
-          <a href={linkSource} target="_blank" rel="noreferrer" class="transition-colors hover:text-[#6C8CFF]">{name === "Gromond Store" ? "View Project" : "Explore Project"} ↗</a>
-        </div>
+    {projects.map(({ name, category, summary }, index) => (
+      <article class="group flex min-h-72 flex-col rounded-2xl border border-[#E7E9EE] bg-[#F7F8FA] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[#4355DB]/40 hover:shadow-[0_16px_40px_rgba(23,25,29,0.08)] md:p-7">
+        <div class="mb-10 flex items-center justify-between"><span class="text-xs font-medium tracking-[0.18em] text-[#858B96] uppercase">0{index + 1}</span><span class="h-2 w-2 rounded-full bg-[#4355DB] opacity-70 transition-opacity group-hover:opacity-100"></span></div>
+        <p class="mb-2 text-xs font-medium tracking-[0.12em] text-[#626875] uppercase">{category}</p>
+        <h3 class="mb-4 font-serif text-3xl font-medium text-[#17191D]">{name}</h3>
+        <p class="text-base leading-7 text-[#626875]">{summary}</p>
       </article>
     ))}
   </div>
