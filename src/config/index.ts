@@ -1,11 +1,11 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Sekandar Samadi — Founder, Developer & Product Builder",
+  title: "Sekandar Samadi — Founder & Developer",
   author: "Sekandar Samadi",
-  description: "Explore the work of Sekandar Samadi, Founder & CEO of Gromond, building digital products, web applications, and AI-powered experiences.",
+  description: "Sekandar Samadi is the Founder & CEO of Gromond, focused on digital product development, web applications, and emerging technologies.",
   lang: "en",
-  siteLogo: "/favicon.svg",
+  siteLogo: "/favicon.png",
   navLinks: [
     { text: "Experience", href: "#experience" },
     { text: "Selected Work", href: "#projects" },
@@ -13,8 +13,8 @@ export const SITE_CONFIG: SiteConfig = {
     { text: "Contact", href: "mailto:sekandar.dev@gmail.com?subject=Portfolio%20Inquiry" },
   ],
   socialLinks: [],
-  socialImage: "/zen-og.png",
-  canonicalURL: "https://astro-zen.vercel.app",
+  socialImage: "https://ik.imagekit.io/g7cevwqvt/file_00000000bd4c8208b65347acec7d180b.png",
+  canonicalURL: "https://astro-zen.vercel.app/",
 };
 
 export const SITE_CONTENT: SiteContent = {
