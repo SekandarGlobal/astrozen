@@ -20,9 +20,11 @@ const { experience } = Astro.props;
           <h4 class="mb-0.5 font-serif text-2xl font-medium text-primary">
             {position}
           </h4>
-          <span class="pb-0.5 text-sm text-white/70">
-            {startDate} — {endDate}
-          </span>
+          {endDate && (
+            <span class="pb-0.5 text-sm text-white/70">
+              {startDate ? `${startDate} — ${endDate}` : endDate}
+            </span>
+          )}
         </div>
         {Array.isArray(summary) ? (
           <ul class="list-none">

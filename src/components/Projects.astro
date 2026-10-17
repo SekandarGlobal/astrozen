@@ -12,7 +12,7 @@ const { projects } = Astro.props;
 
 <Section text="Featured Projects" href="projects">
   {
-    projects.map(({ name, summary, image, linkPreview, linkSource }, index) => {
+    projects.map(({ name, category, summary, image, linkPreview, linkSource }, index) => {
       const top = 98 + index * 40;
       return (
         <div
@@ -21,6 +21,9 @@ const { projects } = Astro.props;
         >
           <div class="bg-difu relative z-1 grid h-145 w-full grid-rows-2 rounded-2xl bg-[#1c232d]/85 before:absolute before:inset-0 before:z-[-1] before:rounded-2xl before:bg-[url(/raja.png)] before:bg-size-[128px] before:bg-repeat before:opacity-5 before:content-[''] sm:grid-cols-2 sm:grid-rows-1 md:h-96">
             <div class="px-6 pt-12">
+              <p class="mb-2 text-xs font-medium tracking-[0.18em] text-neutral/70 uppercase">
+                {category}
+              </p>
               <h3 class="mb-5 font-serif text-3xl font-medium text-primary">
                 {name}
               </h3>
@@ -29,16 +32,18 @@ const { projects } = Astro.props;
                 <a
                   href={linkSource}
                   target="_blank"
+                  rel="noreferrer"
                   class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
                 >
-                  Source
+                  {name === "Gromond Store" ? "View Project" : "Explore Project"}
                 </a>
                 <a
                   href={linkPreview}
                   target="_blank"
+                  rel="noreferrer"
                   class="after:relative after:-bottom-1.25 after:content-[url(/external.svg)] hover:underline"
                 >
-                  Preview
+                  {name === "Gromond Store" ? "Visit Store" : "Visit Website"}
                 </a>
               </div>
             </div>
