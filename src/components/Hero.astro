@@ -1,14 +1,81 @@
 ---
-const { name, specialty, summary, email } = Astro.props;
+const { summary } = Astro.props;
 ---
 
-<section class="grid gap-12 py-24 md:grid-cols-[1.1fr_0.9fr] md:items-end md:gap-20 md:py-36" id="hero">
-  <div>
-      <h1 class="mb-7 max-w-3xl font-serif text-6xl leading-[0.95] font-bold tracking-[-0.06em] text-[#24231F] sm:text-7xl md:text-8xl">{name}</h1>
-    <p class="mb-8 max-w-2xl font-serif text-3xl leading-tight font-medium tracking-[-0.03em] text-[#A34838] sm:text-4xl">{specialty}</p>
-  </div>
-  <div class="md:pb-1">
-    <p class="mb-9 max-w-xl text-base leading-8 text-[#696861] md:text-lg">{summary}</p>
-    <a class="inline-flex items-center border-b border-[#A34838] pb-2 text-sm font-medium tracking-[0.1em] text-[#A34838] uppercase transition-colors hover:border-[#24231F] hover:text-[#24231F]" href={email ? `mailto:${email}` : "mailto:sekandar.dev@gmail.com"}>Get in Touch <span class="ml-3" aria-hidden="true">↗</span></a>
+<section class="hero-editorial relative left-1/2 isolate w-screen -translate-x-1/2 overflow-hidden border-b border-[#DDD7CE] px-5 pt-14 pb-16 sm:px-8 sm:pt-16 sm:pb-20 lg:px-12 lg:pt-20" id="hero">
+  <div class="hero-grain pointer-events-none absolute inset-0 -z-10" aria-hidden="true"></div>
+  <div class="relative mx-auto flex max-w-7xl flex-col items-center text-center">
+    <h1 class="hero-wordmark mb-5 font-serif font-bold leading-[0.82] tracking-[-0.09em] text-[#24231F]">SEKANDAR</h1>
+    <figure class="hero-portrait relative z-10 mb-8 overflow-hidden border border-[#A16C5D]/50 bg-[#EFEBE4] shadow-[0_24px_70px_rgba(36,35,31,0.12)] sm:mb-10" aria-label="Portrait of Sekandar">
+      <img class="h-full w-full object-cover object-[center_38%]" src="/sekandar-profile.png" width="1254" height="1254" alt="Sekandar, portrait" loading="eager" fetchpriority="high" />
+    </figure>
+    <div class="relative z-20 w-full">
+      <h2 class="hero-headline mx-auto max-w-6xl font-serif font-bold uppercase leading-[0.86] tracking-[-0.075em] text-[#24231F]">
+        <span class="block">Engineering</span>
+        <span class="block">Ideas Into</span>
+        <span class="block">Digital</span>
+        <span class="block text-[#A34838]">Experiences.</span>
+      </h2>
+      <div class="mx-auto mt-8 flex max-w-4xl flex-col items-center gap-6 border-t border-[#DDD7CE] pt-6 sm:mt-10 sm:flex-row sm:items-end sm:justify-between sm:gap-10 sm:text-left">
+        <p class="w-full max-w-xl text-sm leading-7 text-[#696861] sm:text-base sm:leading-8">{summary}</p>
+        <a class="inline-flex shrink-0 items-center border-b border-[#A34838] pb-2 text-xs font-semibold tracking-[0.14em] text-[#A34838] uppercase transition-colors duration-300 hover:border-[#24231F] hover:text-[#24231F]" href="#contact">Get in Touch <span class="ml-3 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+  .hero-wordmark {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    white-space: nowrap;
+    text-align: center;
+    font-size: clamp(4.25rem, 12vw, 11rem);
+  }
+
+  @media (min-width: 640px) {
+    .hero-wordmark {
+      font-size: clamp(4.25rem, 10vw, 10rem);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-wordmark {
+      font-size: clamp(6rem, 10.5vw, 10rem);
+    }
+  }
+
+  .hero-portrait {
+    width: min(72vw, 29rem);
+    height: clamp(24rem, 52vw, 36rem);
+    border-radius: 48% 48% 0.25rem 0.25rem;
+  }
+
+  .hero-headline {
+    width: 100%;
+    font-size: clamp(2.35rem, 7.4vw, 7rem);
+  }
+
+  .hero-grain {
+    opacity: 0.11;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+    mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent);
+  }
+
+  @media (max-width: 639px) {
+    .hero-wordmark {
+      font-size: clamp(2.25rem, 10.3vw, 4rem);
+    }
+
+    .hero-portrait {
+      width: min(78vw, 24rem);
+      height: clamp(22rem, 112vw, 29rem);
+    }
+
+    .hero-headline {
+      font-size: clamp(1.8rem, 6.5vw, 3rem);
+      letter-spacing: -0.075em;
+    }
+  }
+</style>

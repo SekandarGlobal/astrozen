@@ -1,9 +1,9 @@
 import type { SiteConfig, SiteContent } from "../types";
 
 export const SITE_CONFIG: SiteConfig = {
-  title: "Sekandar Samadi — Founder & Developer",
-  author: "Sekandar Samadi",
-  description: "Sekandar Samadi is the Founder & CEO of Gromond, focused on digital product development, web applications, and emerging technologies.",
+  title: "Sekandar — Engineer & Digital Product Builder",
+  author: "SEKANDAR",
+  description: "Sekandar is an engineer focused on AI-powered applications, modern web experiences, and useful digital products.",
   lang: "en",
   siteLogo: "/favicon.png",
   navLinks: [
@@ -19,9 +19,9 @@ export const SITE_CONFIG: SiteConfig = {
 
 export const SITE_CONTENT: SiteContent = {
   hero: {
-    name: "Sekandar Samadi",
-    specialty: "Founder & CEO of Gromond · Web Developer & AI Product Builder",
-    summary: "I am Sekandar Samadi, Founder & CEO of Gromond, with a focus on software development, digital products, and emerging technologies. My work combines technical implementation with product thinking, with an emphasis on building useful digital experiences and turning ideas into working applications.",
+    name: "SEKANDAR",
+    specialty: "Engineer · Software Developer · Digital Product Builder",
+    summary: "I'm an engineer focused on building AI-powered applications, modern web experiences, and useful digital products.",
     email: "sekandar.dev@gmail.com",
   },
   experience: [
@@ -54,7 +54,7 @@ export const SITE_CONTENT: SiteContent = {
     },
   ],
   about: {
-    description: "I am Sekandar Samadi, Founder & CEO of Gromond and a developer interested in software engineering, digital product development, and artificial intelligence.\n\nMy work focuses on building web applications, exploring new technologies, and developing digital experiences that combine functionality with thoughtful design.\n\nI enjoy solving technical problems, experimenting with new ideas, and taking products from concept to implementation. My approach is centered on continuous learning, practical execution, and creating technology that serves a clear purpose.",
+    description: "I am an engineer and developer interested in software engineering, digital product development, and artificial intelligence.\n\nMy work focuses on building web applications, exploring new technologies, and developing digital experiences that combine functionality with thoughtful design.\n\nI enjoy solving technical problems, experimenting with new ideas, and taking products from concept to implementation. My approach is centered on continuous learning, practical execution, and creating technology that serves a clear purpose.",
   },
   skills: [
     { title: "Software Development", items: ["Web applications", "Technical problem-solving"] },
